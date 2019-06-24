@@ -10,9 +10,21 @@ const getColour = async () => {
   return colors[0].value;
 };
 
+const ColourBlock = ({colour = '', onClick = () => {}}) => (
+  <span
+    onClick={() => onClick(colour)}
+    className={css`
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background: ${colour};
+      border: 1px solid #000;
+    `}
+  />
+);
+
 const App = () => {
   const [backgroundColour, setBackgroundColour] = useState('');
-  const [backgroundHoverColour, setBackgroundHoverColour] = useState('');
   const [textShadow, setTextShadow] = useState('');
   const [textColour, setTextColour] = useState('');
   const [buttonCount, setButtonCount] = useState(0);
@@ -45,6 +57,16 @@ const App = () => {
     setSavedColours(savedColours.filter(d => d !== c));
   };
 
+  const handleColourClick = c => {
+    const colour = Color(c);
+    const textColour = colour.isLight() ? '#000' : '#fff';
+    const textShadow = colour.darken(0.4).string();
+
+    setTextColour(textColour);
+    setTextShadow(textShadow);
+    setBackgroundColour(c);
+  };
+
   if (!backgroundColour) return null;
 
   return (
@@ -55,18 +77,136 @@ const App = () => {
         text-shadow: 1px 1px 2px ${textShadow};
         width: 100vw;
         height: 100vh;
-        text-align: center;
+        display: flex;
       `}>
-      <h1
+      <div
         className={css`
-          margin: 0;
-          padding: 1em 0;
+          flex-grow: 10;
         `}>
-        {backgroundColour}
-      </h1>
-      <button onClick={handleButtonClick}>Change Colour</button>
-      <button onClick={handleSaveButtonClick}>Save</button>
-      <div>
+        <header>
+          <h1
+            className={css`
+              margin: 0 20px;
+              padding: 1em 0;
+              display: inline-block;
+            `}>
+            {backgroundColour}
+          </h1>
+          <button onClick={handleSaveButtonClick}>Save</button>{' '}
+          <button onClick={handleButtonClick}>Random Colour</button>
+        </header>
+
+        <article>
+          <p>
+            Darker:{' '}
+            <ColourBlock
+              colour={Color(backgroundColour)
+                .darken(0.1)
+                .string()}
+              onClick={() =>
+                handleColourClick(
+                  Color(backgroundColour)
+                    .darken(0.1)
+                    .hex(),
+                )
+              }
+            />
+          </p>
+          <p>
+            Lighter:{' '}
+            <ColourBlock
+              colour={Color(backgroundColour)
+                .lighten(0.1)
+                .string()}
+              onClick={() =>
+                handleColourClick(
+                  Color(backgroundColour)
+                    .lighten(0.1)
+                    .hex(),
+                )
+              }
+            />
+          </p>
+          <p>
+            Saturate (10%):{' '}
+            <ColourBlock
+              colour={Color(backgroundColour)
+                .saturate(0.1)
+                .string()}
+              onClick={() =>
+                handleColourClick(
+                  Color(backgroundColour)
+                    .saturate(0.1)
+                    .hex(),
+                )
+              }
+            />
+          </p>
+          <p>
+            Desaturate (10%):{' '}
+            <ColourBlock
+              colour={Color(backgroundColour)
+                .desaturate(0.1)
+                .string()}
+              onClick={() =>
+                handleColourClick(
+                  Color(backgroundColour)
+                    .desaturate(0.1)
+                    .hex(),
+                )
+              }
+            />
+          </p>
+
+          <h2>Related Colours</h2>
+          <p>
+            Complementary:{' '}
+            <ColourBlock
+              colour={Color(backgroundColour)
+                .rotate(180)
+                .string()}
+              onClick={() =>
+                handleColourClick(
+                  Color(backgroundColour)
+                    .rotate(180)
+                    .hex(),
+                )
+              }
+            />
+          </p>
+          <p>
+            Triadic Complementary:{' '}
+            <ColourBlock
+              colour={Color(backgroundColour)
+                .rotate(120)
+                .string()}
+              onClick={() =>
+                handleColourClick(
+                  Color(backgroundColour)
+                    .rotate(120)
+                    .hex(),
+                )
+              }
+            />
+            <ColourBlock
+              colour={Color(backgroundColour)
+                .rotate(-120)
+                .string()}
+              onClick={() =>
+                handleColourClick(
+                  Color(backgroundColour)
+                    .rotate(-120)
+                    .hex(),
+                )
+              }
+            />
+          </p>
+        </article>
+      </div>
+      <div
+        className={css`
+          flex-grow: 1;
+        `}>
         <h2>Saved Colours</h2>
         <ul
           className={css`
@@ -82,15 +222,7 @@ const App = () => {
                 margin: 0;
               `}>
               {c}{' '}
-              <span
-                className={css`
-                  display: inline-block;
-                  width: 30px;
-                  height: 30px;
-                  background: ${c};
-                  border: 1px solid #000;
-                `}
-              />{' '}
+              <ColourBlock onClick={() => handleColourClick(c)} colour={c} />{' '}
               <button onClick={() => handleColourRemove(c)}>Remove</button>
             </li>
           ))}

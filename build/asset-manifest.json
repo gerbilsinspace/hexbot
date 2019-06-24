@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/hexbot/static/css/main.c2d0e299.chunk.css",
-    "main.js": "/hexbot/static/js/main.e22c5d3d.chunk.js",
-    "main.js.map": "/hexbot/static/js/main.e22c5d3d.chunk.js.map",
+    "main.js": "/hexbot/static/js/main.53c91713.chunk.js",
+    "main.js.map": "/hexbot/static/js/main.53c91713.chunk.js.map",
     "runtime~main.js": "/hexbot/static/js/runtime~main.8a539829.js",
     "runtime~main.js.map": "/hexbot/static/js/runtime~main.8a539829.js.map",
     "static/css/2.764ccc25.chunk.css": "/hexbot/static/css/2.764ccc25.chunk.css",
-    "static/js/2.5cf0cd52.chunk.js": "/hexbot/static/js/2.5cf0cd52.chunk.js",
-    "static/js/2.5cf0cd52.chunk.js.map": "/hexbot/static/js/2.5cf0cd52.chunk.js.map",
+    "static/js/2.9c1fff5e.chunk.js": "/hexbot/static/js/2.9c1fff5e.chunk.js",
+    "static/js/2.9c1fff5e.chunk.js.map": "/hexbot/static/js/2.9c1fff5e.chunk.js.map",
     "index.html": "/hexbot/index.html",
-    "precache-manifest.c69a65ea11d719ab3dc757b5406d421f.js": "/hexbot/precache-manifest.c69a65ea11d719ab3dc757b5406d421f.js",
+    "precache-manifest.557312ae2fc7825a8f6476e0b8f60076.js": "/hexbot/precache-manifest.557312ae2fc7825a8f6476e0b8f60076.js",
     "service-worker.js": "/hexbot/service-worker.js",
     "static/css/2.764ccc25.chunk.css.map": "/hexbot/static/css/2.764ccc25.chunk.css.map",
     "static/css/main.c2d0e299.chunk.css.map": "/hexbot/static/css/main.c2d0e299.chunk.css.map"
