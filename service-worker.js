@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/hexbot/precache-manifest.557312ae2fc7825a8f6476e0b8f60076.js"
+  "/hexbot/precache-manifest.6b5c0e9d7d216c93d5e59a37ad94b388.js"
 );
 
 self.addEventListener('message', (event) => {

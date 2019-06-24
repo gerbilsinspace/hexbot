@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f9ff13f01644771d82655f84473792d5",
+    "revision": "c616e9c2afbfe6738f55beaaf3eaa405",
     "url": "/hexbot/index.html"
   },
   {
-    "revision": "f366ddd7d48af2eff5cf",
+    "revision": "4c22d801ec111344cf0a",
     "url": "/hexbot/static/css/2.764ccc25.chunk.css"
   },
   {
-    "revision": "ce78f58233725bb55ed8",
+    "revision": "f639193813462265b473",
     "url": "/hexbot/static/css/main.c2d0e299.chunk.css"
   },
   {
-    "revision": "f366ddd7d48af2eff5cf",
-    "url": "/hexbot/static/js/2.9c1fff5e.chunk.js"
+    "revision": "4c22d801ec111344cf0a",
+    "url": "/hexbot/static/js/2.a24115ff.chunk.js"
   },
   {
-    "revision": "ce78f58233725bb55ed8",
-    "url": "/hexbot/static/js/main.53c91713.chunk.js"
+    "revision": "f639193813462265b473",
+    "url": "/hexbot/static/js/main.9d0a0e3a.chunk.js"
   },
   {
     "revision": "0bf8ec008da718ecfb7c",
