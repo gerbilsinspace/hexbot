@@ -96,7 +96,10 @@ const App = () => {
           <button onClick={handleButtonClick}>Random Colour</button>
         </header>
 
-        <article>
+        <article
+          className={css`
+            margin-left: 20px;
+          `}>
           <p>
             Darker:{' '}
             <ColourBlock
